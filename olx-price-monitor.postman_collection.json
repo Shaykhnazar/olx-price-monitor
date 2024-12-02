@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "d824b617-bae8-40e3-9444-046f2566b6a4",
+		"name": "olx-price-monitor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12016786"
+	},
+	"item": [
+		{
+			"name": "subscribe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ad_url\": \"https://www.olx.ua/d/uk/obyavlenie/rasprodazha-vakuumnyy-upakovschik-produktov-vakuumator-dlya-edy-IDMFjhj.html?reason=hp%7Cpromoted\",\r\n    \"email\": \"shayx3470941@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/subscribe",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/confirm?token=testtoken",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"confirm"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "testtoken"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
