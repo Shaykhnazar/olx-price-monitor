@@ -1,0 +1,12 @@
+Dear user,
+
+The price of the ad you subscribed to has changed.
+
+Ad URL: {{ad_url}}
+Old Price: {{old_price}}
+New Price: {{new_price}}
+
+Thank you for using our service!
+
+Best regards,
+OLX Price Monitor Team

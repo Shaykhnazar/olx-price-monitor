@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS subscriptions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ad_url VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    status ENUM('pending', 'active') DEFAULT 'pending',
+    confirmation_token VARCHAR(60) DEFAULT NULL,
+    last_known_price DECIMAL(10,2) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+

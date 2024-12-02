@@ -1,0 +1,11 @@
+Dear user,
+
+Thank you for subscribing to the OLX Price Monitor service.
+
+Please click the link below to confirm your subscription:
+{{confirmation_link}}
+
+If the above link does not work, please copy and paste the URL into your browser.
+
+Best regards,
+OLX Price Monitor Team
