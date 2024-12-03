@@ -6,6 +6,31 @@
 git clone https://github.com/Shaykhnazar/olx-price-monitor.git
 ```
 
+### Setup Environment Variables
+In the root directory of the project, create a `.env` file and set the following environment variables:
+
+```bash
+cp .env.example .env
+```
+
+And set the following environment variables in the `.env` file:
+```
+DB_HOST=db
+DB_NAME=olx_price_monitor
+DB_USER=olx_user
+DB_PASS=olx_secret
+
+SMTP_HOST=sandbox.smtp.mailtrap.io
+SMTP_PORT=2525
+SMTP_USER=user
+SMTP_PASS=password
+SMTP_FROM=no-reply@gmail.com
+SMTP_NAME="OLX Price Monitor"
+
+TEST_EMAIL=your-email@gmail.com
+```
+
+
 ### Build and Restart the Containers
 
 ```bash
@@ -71,6 +96,7 @@ The Postman collection is available at [olx-price-monitor.postman_collection.jso
 3. Subscribe to an ad using the "Subscribe" endpoint. `/subscribe`
 4. Confirm your subscription using the "Confirm" endpoint. `/confirm?token={token}`
 
+<hr>
 
 # Running Tests
 
