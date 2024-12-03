@@ -13,7 +13,7 @@ services:
       - db
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     environment:
       MYSQL_DATABASE: olx_price_monitor
       MYSQL_ROOT_PASSWORD: secret
@@ -28,22 +28,26 @@ services:
 
   php-worker:
     build: .
-    command: ["php", "/app/worker.php"]
+    command: ["wait-for-it.sh", "db:3306", "--", "php", "/app/worker.php"]
     environment:
       - WORKER_INTERVAL=3600
     volumes:
       - .:/app
     networks:
       - app-network
+    depends_on:
+      - db
 
   test:
     build: .
     working_dir: /app
-    entrypoint: ["./vendor/bin/phpunit"]
+    entrypoint: ["wait-for-it.sh", "db:3306", "--", "./vendor/bin/phpunit"]
     volumes:
       - .:/app
     networks:
       - app-network
+    depends_on:
+      - db
 
 networks:
   app-network:
